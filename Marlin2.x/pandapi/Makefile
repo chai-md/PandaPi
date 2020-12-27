@@ -1,5 +1,5 @@
 
-CROSS_COMPILE = arm-linux-gnueabihf-
+CROSS_COMPILE = ccache arm-linux-gnueabihf-
 CC=$(CROSS_COMPILE)g++
 LD :=$(CROSS_COMPILE)g++
 LINK=$(CROSS_COMPILE)g++
