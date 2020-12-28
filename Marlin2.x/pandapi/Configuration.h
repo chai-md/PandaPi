@@ -129,9 +129,9 @@
 #define BAUDRATE_TNT   115200  // for octoprint serial//  PANDAPI [ 57600, 115200,  500000, 1000000]
 
 //  PANDAPI
-#define DGUS_LCD_UI_PANDAPI
+//#define DGUS_LCD_UI_PANDAPI
 #if DISABLED(DGUS_LCD_UI_PANDAPI)
-	#define ULTRA_LCD 
+//	#define ULTRA_LCD 
 	#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 #endif
 
@@ -598,7 +598,7 @@
  *
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
-#define PREVENT_COLD_EXTRUSION
+//#define PREVENT_COLD_EXTRUSION
 #define EXTRUDE_MINTEMP 170
 
 /**
@@ -637,7 +637,7 @@
 
 // Uncomment one of these options to enable CoreXY, CoreXZ, or CoreYZ kinematics
 // either in the usual order or reversed
-//#define COREXY
+#define COREXY
 //#define COREXZ
 //#define COREYZ
 //#define COREYX
@@ -774,18 +774,18 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }   //Orig { 80, 80, 4000, 500 } 93*2 = DRV8825 1/32 Stepps
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 1600, 686 * 2 }   //Orig { 80, 80, 4000, 500 } 93*2 = DRV8825 1/32 Stepps
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 250, 250, 30, 50 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50 } // ...or, set your own edit limits
+  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 100, 100 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -794,7 +794,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 2500, 2500, 100, 10000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -845,7 +845,7 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.013 // (mm) Distance from real junction edge
+  #define JUNCTION_DEVIATION_MM 0.020 // (mm) Distance from real junction edge
   #define JD_HANDLE_SMALL_SEGMENTS    // Use curvature estimation instead of just the junction angle
                                       // for small segments (< 1mm) with large junction angles (> 135°).
 #endif
@@ -858,7 +858,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION
+#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1112,7 +1112,7 @@
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR true
 #define INVERT_Y_DIR true
-#define INVERT_Z_DIR false
+#define INVERT_Z_DIR true
 
 // @section extruder
 
@@ -1146,16 +1146,16 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 220
-#define Y_BED_SIZE 220
+#define X_BED_SIZE 300
+#define Y_BED_SIZE 270
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define Y_MIN_POS -5
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 250
+#define Z_MAX_POS 200
 
 /**
  * Software Endstops
@@ -1780,7 +1780,7 @@
 //
 //  Set this option if CLOCKWISE causes values to DECREASE
 //
-//#define REVERSE_ENCODER_DIRECTION
+#define REVERSE_ENCODER_DIRECTION
 
 //
 // This option reverses the encoder direction for navigating LCD menus.
@@ -2363,25 +2363,26 @@
 
 
 //only for TMC2209
-#define X_CURRENT_PI		500 	   // (mA) RMS current. Multiply by 1.414 for peak current.
-#define Y_CURRENT_PI		600 	   // (mA) RMS current. Multiply by 1.414 for peak current.
-#define Z_CURRENT_PI		500 	   // (mA) RMS current. Multiply by 1.414 for peak current.
-#define E0_CURRENT_PI		600 	   // (mA) RMS current. Multiply by 1.414 for peak current.
+#define X_CURRENT_PI		1200 	   // (mA) RMS current. Multiply by 1.414 for peak current.
+#define Y_CURRENT_PI		1200 	   // (mA) RMS current. Multiply by 1.414 for peak current.
+#define Z_CURRENT_PI		800 	   // (mA) RMS current. Multiply by 1.414 for peak current.
+#define E0_CURRENT_PI		350 	   // (mA) RMS current. Multiply by 1.414 for peak current.
 #define E1_CURRENT_PI		600 	   // (mA) RMS current. Multiply by 1.414 for peak current.
 #define E2_CURRENT_PI		600 	   // (mA) RMS current. Multiply by 1.414 for peak current.
+#define HOMING_CURRENT_PI	1000
 
 
  /**
   * Use StallGuard2 to home / probe X, Y, Z.
   * only for TMC2209
   */
- #define SENSORLESS_HOMING  
+#define SENSORLESS_HOMING  
  
 #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
    // TMC2209: 0...255. TMC2130: -64...63
-  #define X_STALL_SENSITIVITY  72
+  #define X_STALL_SENSITIVITY  95
   #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-  #define Y_STALL_SENSITIVITY  92
+  #define Y_STALL_SENSITIVITY  95
   #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
    //#define Z_STALL_SENSITIVITY  8
    //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
