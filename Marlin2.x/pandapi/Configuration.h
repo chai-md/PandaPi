@@ -774,7 +774,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 1600, 686 * 2 }   //Orig { 80, 80, 4000, 500 } 93*2 = DRV8825 1/32 Stepps
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 320, 320, 1600, 686 * 2}   //Orig { 80, 80, 4000, 500 } 93*2 = DRV8825 1/32 Stepps
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -794,7 +794,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 2500, 2500, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 5000, 5000, 100, 10000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -2363,13 +2363,13 @@
 
 
 //only for TMC2209
-#define X_CURRENT_PI		1200 	   // (mA) RMS current. Multiply by 1.414 for peak current.
-#define Y_CURRENT_PI		1200 	   // (mA) RMS current. Multiply by 1.414 for peak current.
+#define X_CURRENT_PI		1500 	   // (mA) RMS current. Multiply by 1.414 for peak current.
+#define Y_CURRENT_PI		1500 	   // (mA) RMS current. Multiply by 1.414 for peak current.
 #define Z_CURRENT_PI		800 	   // (mA) RMS current. Multiply by 1.414 for peak current.
 #define E0_CURRENT_PI		350 	   // (mA) RMS current. Multiply by 1.414 for peak current.
 #define E1_CURRENT_PI		600 	   // (mA) RMS current. Multiply by 1.414 for peak current.
 #define E2_CURRENT_PI		600 	   // (mA) RMS current. Multiply by 1.414 for peak current.
-#define HOMING_CURRENT_PI	1000
+#define HOMING_CURRENT_PI	800
 
 
  /**
@@ -2380,9 +2380,9 @@
  
 #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
    // TMC2209: 0...255. TMC2130: -64...63
-  #define X_STALL_SENSITIVITY  95
+  #define X_STALL_SENSITIVITY  30
   #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-  #define Y_STALL_SENSITIVITY  95
+  #define Y_STALL_SENSITIVITY  30
   #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
    //#define Z_STALL_SENSITIVITY  8
    //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY

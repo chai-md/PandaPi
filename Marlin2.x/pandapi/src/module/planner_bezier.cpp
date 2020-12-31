@@ -27,6 +27,7 @@
  *
  */
 
+#pragma GCC optimize("O1")
 #include "../inc/MarlinConfig.h"
 
 #if ENABLED(BEZIER_CURVE_SUPPORT)

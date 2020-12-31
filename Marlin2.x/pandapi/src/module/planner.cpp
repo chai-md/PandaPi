@@ -62,6 +62,7 @@
  * was designed, written and tested by Eduardo José Tagle on April/2018
  */
 
+#pragma GCC optimize("O3")
 #include "planner.h"
 #include "stepper.h"
 #include "motion.h"

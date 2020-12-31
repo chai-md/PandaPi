@@ -25,6 +25,8 @@
  * Stepper driver indirection for Trinamic
  */
 
+
+#pragma GCC optimize("O3")
 #include "../../inc/MarlinConfig.h"
 
 #if HAS_TRINAMIC_CONFIG

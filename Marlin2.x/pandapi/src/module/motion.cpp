@@ -24,6 +24,7 @@
  * motion.cpp
  */
 
+#pragma GCC optimize("O0")
 #include "motion.h"
 #include "endstops.h"
 #include "stepper.h"

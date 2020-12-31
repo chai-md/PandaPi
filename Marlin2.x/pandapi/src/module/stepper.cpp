@@ -77,6 +77,9 @@
  * to avoid impacting ISR speed.
  */
 
+
+
+#pragma GCC optimize("O1")
 #include "stepper.h"
 
 Stepper stepper; // Singleton

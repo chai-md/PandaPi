@@ -60,6 +60,8 @@
 //  PANDAPI
 //#include "servo_private.h"
 
+#pragma GCC optimize("O3")
+
 #include "wiringPi.h"
 #include "wiringPiI2C.h"
 extern int i2c_fd ;  
