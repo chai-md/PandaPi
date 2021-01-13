@@ -33,7 +33,7 @@
  */
 
 #if  defined PANDAPI
-#pragma GCC optimize("O3")
+#pragma GCC optimize("O1")
 
 // Disable HardwareSerial.cpp to support chips without a UART (Attiny, etc.)
 
