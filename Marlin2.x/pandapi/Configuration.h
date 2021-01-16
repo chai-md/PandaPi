@@ -516,9 +516,8 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   //////// PANDAPI
-  // //  Ender3
-  #define DEFAULT_Kp 25
-  #define DEFAULT_Ki 2.0
+  #define DEFAULT_Kp 12
+  #define DEFAULT_Ki 0.9
   #define DEFAULT_Kd 440
 
   // Ender5
@@ -841,7 +840,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION
+#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -2352,7 +2351,6 @@
 #define E0_CURRENT_PI		350 	   // (mA) RMS current. Multiply by 1.414 for peak current.
 #define E1_CURRENT_PI		600 	   // (mA) RMS current. Multiply by 1.414 for peak current.
 #define E2_CURRENT_PI		600 	   // (mA) RMS current. Multiply by 1.414 for peak current.
-#define HOMING_CURRENT_PI	600
 
 
  /**

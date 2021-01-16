@@ -1783,7 +1783,8 @@
 #endif
 
 // Moves (or segments) with fewer steps than this will be joined with the next move
-#define MIN_STEPS_PER_SEGMENT 6
+//#define MIN_STEPS_PER_SEGMENT 6
+#define MIN_STEPS_PER_SEGMENT 30
 
 /**
  * Minimum delay before and after setting the stepper DIR (in ns)
@@ -1798,7 +1799,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-#define MINIMUM_STEPPER_POST_DIR_DELAY 200
+#define MINIMUM_STEPPER_POST_DIR_DELAY 700
 //#define MINIMUM_STEPPER_PRE_DIR_DELAY 200
 
 /**
@@ -1812,7 +1813,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-//#define MINIMUM_STEPPER_PULSE 1
+//#define MINIMUM_STEPPER_PULSE 2
 
 /**
  * Maximum stepping rate (in Hz) the stepper driver allows
@@ -2218,8 +2219,8 @@
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
   #if AXIS_IS_TMC(X)
-    #define X_CURRENT       X_CURRENT_PI        // (mA) RMS current. Multiply by 1.414 for peak current.
-    #define X_CURRENT_HOME  HOMING_CURRENT_PI  // (mA) RMS current for sensorless homing
+    #define X_CURRENT       X_CURRENT_PI  // (mA) RMS current. Multiply by 1.414 for peak current.
+    #define X_CURRENT       X_CURRENT_PI  // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     32    // 0..256
     #define X_RSENSE          0.11
     #define X_CHAIN_POS      -1    // <=0 : Not chained. 1 : MCU MOSI connected. 2 : Next in chain, ...
@@ -2235,7 +2236,7 @@
 
   #if AXIS_IS_TMC(Y)
     #define Y_CURRENT       Y_CURRENT_PI
-    #define Y_CURRENT_HOME  HOMING_CURRENT_PI
+    #define Y_CURRENT_HOME  Y_CURRENT_PI
     #define Y_MICROSTEPS     32
     #define Y_RSENSE          0.11
     #define Y_CHAIN_POS      -1
