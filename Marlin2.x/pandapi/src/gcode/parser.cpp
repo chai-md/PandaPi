@@ -24,7 +24,7 @@
  * parser.cpp - Parser for a GCode line, providing a parameter interface.
  */
 
-#pragma GCC optimize("O3")
+//#pragma GCC optimize("O0")
 #include "parser.h"
 
 #include "../MarlinCore.h"

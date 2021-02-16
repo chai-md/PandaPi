@@ -24,7 +24,6 @@ AllDirs := $(shell ls -R | grep '^\./.*:$$' | awk '{gsub(":","");print}') .
 CPPFLAGS = $(foreach n,$(AllDirs) , -I$(n))
   
 INC = -I./  -I./src/lcd/dogm  -I/home/pi/src/CMSIS -I/home/pi/src/utility -ITMC2208Stepper -I/home/pi/src/CMSIS-W -I./lib/TMCStepper-master/src/source/-I./lib/TMCStepper-master/src/ -I./lib/NeoPixel_LED/ -Wall -g0 -lm
-;CFLAGS = -mfpu=neon-fp-armv8 -O0 -c -std=c++11 -D PANDAPI
 CFLAGS = -O0 -c -std=c++11 -D PANDAPI
 LIBS = -lpi -lwiringPi -lpthread -L ./
 

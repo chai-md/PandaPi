@@ -56,7 +56,7 @@
 #endif
 
 // Optimize this code with -O3
-#pragma GCC optimize (3)
+//#pragma GCC optimize (3)
 
 #ifdef ARDUINO_ARCH_STM32F1
   #define ST7920_DAT(V) !!((V) & 0x80)
@@ -70,7 +70,7 @@
   val <<= 1; }while(0)
 
 // Optimize this code with -O3
-#pragma GCC optimize (3)
+//#pragma GCC optimize (3)
 
 void ST7920_SWSPI_SND_8BIT(uint8_t val) {
   ST7920_SND_BIT; // 1

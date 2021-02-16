@@ -26,7 +26,7 @@
  */
 
 
-#pragma GCC optimize("O1")
+//#pragma GCC optimize("O0")
 #include "../../inc/MarlinConfig.h"
 
 #if HAS_TRINAMIC_CONFIG

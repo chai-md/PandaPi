@@ -39,7 +39,7 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#pragma GCC optimize("O3")
+//#pragma GCC optimize("O3")
 #include "../inc/MarlinConfig.h"
 
 #if ABL_PLANAR || ENABLED(AUTO_BED_LEVELING_UBL)

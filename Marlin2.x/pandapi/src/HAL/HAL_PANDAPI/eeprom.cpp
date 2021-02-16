@@ -20,7 +20,7 @@
  *
  */
 #ifdef PANDAPI// __AVR__
-#pragma GCC optimize("O3")
+//#pragma GCC optimize("O0")
 
 #include "../../inc/MarlinConfig.h"
 

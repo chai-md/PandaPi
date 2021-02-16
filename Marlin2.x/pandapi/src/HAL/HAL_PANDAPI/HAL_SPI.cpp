@@ -30,7 +30,7 @@
  */
 
 #if  defined PANDAPI
-#pragma GCC optimize("O0")
+//#pragma GCC optimize("O0")
 
 #include "../../inc/MarlinConfig.h"
 

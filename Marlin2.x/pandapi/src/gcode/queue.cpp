@@ -24,7 +24,7 @@
  * queue.cpp - The G-code command queue
  */
 
-#pragma GCC optimize("O0")
+//#pragma GCC optimize("O0")
 #include "queue.h"
 GCodeQueue queue;
 

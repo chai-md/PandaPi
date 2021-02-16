@@ -25,7 +25,7 @@
  *             Most will migrate to classes, by feature.
  */
 
-#pragma GCC optimize("O3")
+//#pragma GCC optimize("O0")
 #include "gcode.h"
 GcodeSuite gcode;
 

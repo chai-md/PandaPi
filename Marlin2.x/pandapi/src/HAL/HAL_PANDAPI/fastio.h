@@ -27,6 +27,7 @@
  * Contributed by Triffid_Hunter and modified by Kliment, thinkyhead, Bob-the-Kuhn, et.al.
  */
 
+#include "../shared/Delay.h"
 //PANDA #include <avr/io.h>
 
 #define AVR_AT90USB1286_FAMILY (defined(__AVR_AT90USB1287__) || defined(__AVR_AT90USB1286__) || defined(__AVR_AT90USB1286P__) || defined(__AVR_AT90USB646__) || defined(__AVR_AT90USB646P__) || defined(__AVR_AT90USB647__))
@@ -69,7 +70,8 @@
 
  #define _WRITE_C(IO,V) 
 
-#define _WRITE(IO,V)         digitalWrite(IO, V)//do{ if (&(DIO ## IO ## _RPORT) < (uint8_t*)0x100) _WRITE_NC(IO,V); else _WRITE_C(IO,V); }while(0)
+#define _WRITE(IO,V)         do{ digitalWrite(IO, V); DELAY_NS(1); }while(0)
+		//do{ if (&(DIO ## IO ## _RPORT) < (uint8_t*)0x100) _WRITE_NC(IO,V); else _WRITE_C(IO,V); }while(0)
 
 #define _TOGGLE(IO)         //  (DIO ## IO ## _RPORT = _BV(DIO ## IO ## _PIN))
 
